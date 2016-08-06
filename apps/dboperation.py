@@ -3,7 +3,10 @@
 
 import sqlite3
 import uuid
-db = 'proxylist.db'
+import setting
+from tools import iptools as iptools
+
+db = setting.db
 try:
     conn = sqlite3.connect(db)
     conn.execute('''CREATE TABLE PROXY
@@ -12,7 +15,7 @@ try:
             PORT INT NOT NULL,
             LOCATION INT,
             PROTOCOL TEXT);''')
-except sqlite3.OperationalError:
+except sqlite3.OperationalError as e:
     pass
 finally:
     conn.close()
@@ -122,3 +125,14 @@ def selectAllAddress():
     #['117.135.250.88', '117.40.35.233', '61.143.158.238', '124.202.180.6']
 
 
+def checkAllAddress(address):
+    temp= select(address)
+    port,protocol = temp[0][2],temp[0][4]
+
+    if(iptools.ipverify(address,port)):
+        location = iptools.getLocation(address)
+        insert(address=address,port=port,location=location,protocol=protocol)
+        # print("success: "+str(address))
+    else:
+        delete(address)
+        print("delete: "+str(address))

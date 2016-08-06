@@ -1,0 +1,1 @@
+python3 apps/main.py

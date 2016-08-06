@@ -1,6 +1,19 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-import random
+
+proxy_web_list = {
+"http://www.kuaidaili.com/free/inha/",
+"http://www.kuaidaili.com/free/outha/",
+"http://ip84.com/dlgn/",
+"http://ip84.com/gwgn/",
+"http://www.xicidaili.com/wn/",
+"http://www.xicidaili.com/nn/",
+"http://www.ip3366.net/free/?stype=1&page=",
+"http://www.ip3366.net/free/?stype=3&page=",
+"http://www.mimiip.com/gngao/",
+"http://www.mimiip.com/hw/"
+}
+
 header_pc = {
 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36',
 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36',
@@ -17,9 +30,8 @@ header_pc = {
 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)'
 }
 
-def getHeader():
-    random_header = random.sample(header_pc, 1)
-    header = dict(('User-Agent', value) for value in random_header)
-    return header
-    #output example
-    #{'User-Agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Maxthon 2.0)'}
+proxy_web_loop_number = 3
+
+thread_number = 4
+
+db = 'proxylist.db'

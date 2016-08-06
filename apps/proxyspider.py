@@ -4,11 +4,15 @@
 import requests
 from bs4 import BeautifulSoup
 
-import proxyisvalid
 import dboperation
-import headerall
+import setting
+from tools import iptools as iptools
+from tools import headertools as headertools
 
-def getProxy(website,maxrange = 3,isproxy = False):
+proxy_web_list = setting.proxy_web_list
+proxy_web_loop_number = setting.proxy_web_loop_number
+
+def getProxy(website,maxrange = proxy_web_loop_number,isproxy = False):
 
     if(isproxy):
         #TODO
@@ -20,7 +24,7 @@ def getProxy(website,maxrange = 3,isproxy = False):
         ip_website = website+str(n)
         print("Scanning website: "+ip_website)
 
-        header_info = headerall.getHeader()
+        header_info = headertools.getHeaderOfPC(proxy_web_list)
 
         response = requests.get(ip_website,headers = header_info,proxies = proxy)
 
@@ -31,12 +35,14 @@ def getProxy(website,maxrange = 3,isproxy = False):
         for i,e in enumerate(result,0):
 
             temp = e.text
+            # print(temp)
 
-            if proxyisvalid.ip_isvalid(temp):
+            if iptools.ip_isvalid(temp):
                 address=temp
-            elif proxyisvalid.port_isvalid(temp):
+            elif iptools.port_isvalid(temp):
                 port = temp
-            elif proxyisvalid.protocol_isvalid(temp):
+            elif iptools.protocol_isvalid(temp):
                 protocol = temp
+                print(address,port,protocol)
                 dboperation.insert(address=address,port=port,location="",protocol=protocol)
 
