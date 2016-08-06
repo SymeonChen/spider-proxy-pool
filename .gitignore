@@ -1,2 +1,4 @@
 __pycache__
 proxy_list.db
+*.pyc
+*.db
