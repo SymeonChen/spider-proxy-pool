@@ -11,7 +11,10 @@ proxy_web_list = {
 "http://www.ip3366.net/free/?stype=1&page=",
 "http://www.ip3366.net/free/?stype=3&page=",
 "http://www.mimiip.com/gngao/",
-"http://www.mimiip.com/hw/"
+"http://www.mimiip.com/hw/",
+"http://www.xsdaili.com/index.php?s=/index/mfdl/p/",
+"http://www.xsdaili.com/index.php?s=/index/mfdl/type/3/p/"
+
 }
 
 header_pc = {
@@ -30,8 +33,8 @@ header_pc = {
 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)'
 }
 
-proxy_web_loop_number = 3
+proxy_web_loop_number = 5
 
-thread_number = 4
+thread_number = 10
 
 db = 'proxylist.db'

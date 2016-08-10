@@ -6,6 +6,8 @@ from multiprocessing.dummy import Pool as ThreadPool
 import dboperation
 import setting 
 import proxyspider
+import proxyapi
+
 thread_number = setting.thread_number
 proxy_list = setting.proxy_web_list
 
@@ -17,4 +19,51 @@ pool.map(dboperation.checkAllAddress,results)
 
 pool.close()
 pool.join() 
+
+proxyapi.run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

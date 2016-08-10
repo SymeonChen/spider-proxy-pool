@@ -28,6 +28,13 @@ run the apps.
 sh run.sh
 ```
 
+Now we can get http proxy lists from
+```shell
+http://localhost:5000/api/http
+```
+
+
+
 ## 关于
 用于从多个代理网站获取代理信息的Python项目。
 ### 简介
@@ -52,3 +59,8 @@ sh install.sh
 ```shell
 sh run.sh
 ```
+运行完毕后即可通过
+```shell
+http://localhost:5000/api/http
+```
+来获取http代理列表。

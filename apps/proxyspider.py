@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import time
 import requests
 from bs4 import BeautifulSoup
 
@@ -43,6 +44,7 @@ def getProxy(website,maxrange = proxy_web_loop_number,isproxy = False):
                 port = temp
             elif iptools.protocol_isvalid(temp):
                 protocol = temp
-                print(address,port,protocol)
+                # print(address,port,protocol)
                 dboperation.insert(address=address,port=port,location="",protocol=protocol)
 
+        time.sleep(3)
