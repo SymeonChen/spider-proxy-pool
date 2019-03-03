@@ -6,7 +6,7 @@
 
 A python program to get lists of proxy information from proxy websites.
 ### Introduction
-![](http://oa5cno1tg.bkt.clouddn.com//web/image/20160802/spider.png)
+![](https://blog-1252276648.cos.ap-shanghai.myqcloud.com/spider.png)
 
 It will create a sqlite database for proxy information including ip address, port, location and protocol.
 ### Usage
@@ -38,7 +38,7 @@ http://localhost:5000/api/http
 ## 关于
 用于从多个代理网站获取代理信息的Python项目。
 ### 简介
-![](http://oa5cno1tg.bkt.clouddn.com//web/image/20160802/spider.png)
+![](https://blog-1252276648.cos.ap-shanghai.myqcloud.com/spider.png)
 
 运行后会创建一个sqlite数据库，包含IP地址，端口号，位置，协议。
 ### 使用方法
