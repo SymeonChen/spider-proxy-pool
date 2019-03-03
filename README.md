@@ -1,6 +1,5 @@
-* [English version](#about)
-
-* [中文版](#关于)
+* [English Version](https://github.com/SymeonChen/spider-proxy-pool/blob/master/README.md)
+* [中文版](https://github.com/SymeonChen/spider-proxy-pool/blob/master/README-zh.md)
 
 ## About
 
